@@ -15,7 +15,8 @@ public class VendorsDAOimpl implements  VendorsDAO {
     JdbcTemplate jdbcTemplate;
     @Override
     public int save(Vendors vendors) {
-        return 0;
+
+        return jdbcTemplate.update("INSERT INTO tbl_nursery_vendors(fname,sname,othername,phone,email,county,created_at)VALUES (?,?,?,?,?,?,?)",new Object[]{vendors.getFname(),vendors.getSname(),vendors.getOthername(),vendors.getPhone(),vendors.getEmail(),vendors.getCounty(),vendors.getCreated_at()});
     }
 
     @Override
