@@ -1,6 +1,7 @@
 package com.kefri.nurserymanagement.contoler;
 
 import com.kefri.nurserymanagement.dao.VendorsDAO;
+import com.kefri.nurserymanagement.model.Nurseries;
 import com.kefri.nurserymanagement.model.Vendors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,4 +30,11 @@ public class VendorsControler {
         return   vendorsDAO.save(employee)+" Vendor added successfully ";
 
     }
+
+
+    @GetMapping("/allnurseries")
+    public List<Nurseries> getNurseries(){
+        return   vendorsDAO.getAllNurseries();
+    }
+
 }

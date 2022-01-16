@@ -1,5 +1,6 @@
 package com.kefri.nurserymanagement.dao;
 
+import com.kefri.nurserymanagement.model.Nurseries;
 import com.kefri.nurserymanagement.model.Vendors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -38,4 +39,13 @@ public class VendorsDAOimpl implements  VendorsDAO {
     public Vendors getbyId(int id) {
         return null;
     }
+
+
+
+    @Override
+    public List<Nurseries> getAllNurseries() {
+        return  jdbcTemplate.query("SELECT * FROM tbl_nurseries",new BeanPropertyRowMapper<Nurseries>(Nurseries.class));
+    }
+
+
 }

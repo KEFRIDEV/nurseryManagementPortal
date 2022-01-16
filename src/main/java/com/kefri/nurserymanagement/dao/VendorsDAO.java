@@ -1,5 +1,6 @@
 package com.kefri.nurserymanagement.dao;
 
+import com.kefri.nurserymanagement.model.Nurseries;
 import com.kefri.nurserymanagement.model.Vendors;
 
 import java.util.List;
@@ -14,6 +15,10 @@ public interface VendorsDAO {
     List<Vendors> getAll();
 
     Vendors getbyId(int id);
+
+
+    List<Nurseries> getAllNurseries();
+
 
 
 }
