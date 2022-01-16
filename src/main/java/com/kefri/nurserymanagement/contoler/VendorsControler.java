@@ -4,10 +4,7 @@ import com.kefri.nurserymanagement.dao.VendorsDAO;
 import com.kefri.nurserymanagement.model.Nurseries;
 import com.kefri.nurserymanagement.model.Vendors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,9 +29,25 @@ public class VendorsControler {
     }
 
 
+    // vetch all nurseries added
     @GetMapping("/allnurseries")
     public List<Nurseries> getNurseries(){
         return   vendorsDAO.getAllNurseries();
+    }
+
+    @PostMapping("/addnursery")
+    public  String saveNursery(@RequestBody Nurseries nurseries){
+        return   vendorsDAO.saveNursery(nurseries)+" Nursery added successfully ";
+
+    }
+
+
+//    fetch nursery by vendors id
+
+    @GetMapping("/allnurseries/{id}")
+    public  Nurseries getNursery(@PathVariable int id){
+        return vendorsDAO.getNurseryByID(id);
+
     }
 
 }

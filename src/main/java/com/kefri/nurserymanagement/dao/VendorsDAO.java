@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface VendorsDAO {
 
+
+    //vendors
     int save(Vendors vendors);
 
     int update(Vendors vendors,int id);
@@ -17,7 +19,14 @@ public interface VendorsDAO {
     Vendors getbyId(int id);
 
 
+    // nurseries
+    int saveNursery(Nurseries nurseries);
+
+
     List<Nurseries> getAllNurseries();
+
+
+    Nurseries getNurseryByID(int id);
 
 
 
